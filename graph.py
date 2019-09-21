@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 class Graph:
     def __init__(self):
         self.nodes = {}
-        self.names = []
+        self.names = {}
         self.names[1] = "Acre"
         self.names[2] = "Alagoas"
         self.names[3] = "Amapá"
@@ -44,3 +45,13 @@ class Graph:
 
     def set_node_name(self, node_id, name):
         self.nodes[node_id]['name'] = name
+
+    def print_graph(self):
+        for node_id in self.nodes:
+            print(self.nodes[node_id]['name'])
+            for adjacent_id in self.nodes[node_id]['adjacency']:
+                print('\t '+str(self.names[adjacent_id]))
+            print('\n')
+
+
+

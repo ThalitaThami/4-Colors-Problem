@@ -1,9 +1,10 @@
 class PopulateGraph:
     def __init__(self, graph):
         self.graph = graph
+        self.insert()
 
     def insert(self):
-        for i in range(1, 27):
+        for i in range(1, 28):
             self.graph.insert_node(i)
 
         self.graph.insert_adjacency(1, 4)
