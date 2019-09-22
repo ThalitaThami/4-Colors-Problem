@@ -2,6 +2,7 @@
 class Graph:
     def __init__(self):
         self.nodes = {}
+        self.colors = {1, 2, 3, 4}
         self.names = {}
         self.names[1] = "Acre"
         self.names[2] = "Alagoas"
@@ -31,8 +32,8 @@ class Graph:
         self.names[26] = "Sergipe"
         self.names[27] = "Tocantins"
 
-    def get_adjacency(self, id):
-        return self.nodes[id]['adjacency']
+    def get_adjacency(self, node_id):
+        return self.nodes[node_id]['adjacency']
 
     def insert_node(self, node_id):
         self.nodes[node_id] = {'color': '', 'name': self.names[node_id], 'adjacency': []}
@@ -43,6 +44,9 @@ class Graph:
     def set_node_color(self, node_id, color):
         self.nodes[node_id]['color'] = color
 
+    def get_node_color(self, node_id):
+        return self.nodes[node_id]['color']
+
     def set_node_name(self, node_id, name):
         self.nodes[node_id]['name'] = name
 
@@ -50,8 +54,42 @@ class Graph:
         for node_id in self.nodes:
             print(self.nodes[node_id]['name'])
             for adjacent_id in self.nodes[node_id]['adjacency']:
-                print('\t '+str(self.names[adjacent_id]))
+                print('\t ' + str(self.names[adjacent_id]))
             print('\n')
 
+    def print_graph_with_colors(self):
+        for node_id in self.nodes:
+            print(self.nodes[node_id]['name'])
+            print(self.nodes[node_id]['color'])
 
+            for adjacent_id in self.nodes[node_id]['adjacency']:
+                print('\t ' + str(self.names[adjacent_id]) + ": " + str(self.get_node_color(adjacent_id)))
 
+            print('\n')
+
+    def smaller_color(self, node_id):
+        for color in self.colors:
+            can_color = True
+
+            for adjacent_id in self.nodes[node_id]['adjacency']:
+                if self.nodes[adjacent_id]['color'] == color:
+                    can_color = False
+
+            if can_color:
+                return color
+
+        return 5
+
+    def can_color(self, adjacent_id):
+        return self.smaller_color(adjacent_id) < 5
+
+    def check_solution(self):
+        for node_id in self.nodes:
+            node_color = self.nodes[node_id]['color']
+            for adjacent_id in self.get_adjacency(node_id):
+                if self.nodes[adjacent_id]['color'] == node_color:
+                    print(self.names[node_id])
+                    print(self.names[adjacent_id])
+                    return False
+
+        return True

@@ -57,13 +57,14 @@ class PopulateGraph:
         self.graph.insert_adjacency(11, 14)
         self.graph.insert_adjacency(11, 27)
         self.graph.insert_adjacency(11, 9)
-        self.graph.insert_adjacency(11, 11)
+        self.graph.insert_adjacency(11, 12)
         self.graph.insert_adjacency(11, 22)
 
         self.graph.insert_adjacency(12, 9)
         self.graph.insert_adjacency(12, 11)
         self.graph.insert_adjacency(12, 25)
         self.graph.insert_adjacency(12, 16)
+        self.graph.insert_adjacency(12, 13)
 
         self.graph.insert_adjacency(13, 5)
         self.graph.insert_adjacency(13, 19)
