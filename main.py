@@ -9,5 +9,5 @@ populateGraph = PopulateGraph(graph)
 backtracking = Backtracking(graph)
 
 print(backtracking.run())
-graph.print_graph_with_colors()
+#graph.print_graph_with_colors()
 print(graph.check_solution())
