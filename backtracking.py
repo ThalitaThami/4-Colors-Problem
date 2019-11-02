@@ -8,15 +8,15 @@ class Backtracking:
 
     def run(self):
         path = []
-        self.backtracking(5, path)
+        self.backtracking(1, path)
 
     def backtracking(self, node_id, path):
         self.path = path
+
         if node_id in path:
             return
 
         if not self.graph.can_color(node_id):
-            print("VOLTOU")
             return
 
         path.append(node_id)

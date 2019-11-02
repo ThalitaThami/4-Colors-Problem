@@ -1,13 +1,14 @@
-class PopulateGraph:
+# coding=utf-8
+class GraphPopulator:
     def __init__(self, graph):
         self.graph = graph
-        self.insert()
 
     def insert(self):
         for i in range(1, 28):
             self.graph.insert_node(i)
 
         self.graph.insert_adjacency(1, 4)
+        self.graph.insert_adjacency(1, 22)
 
         self.graph.insert_adjacency(2, 17)
         self.graph.insert_adjacency(2, 26)
@@ -111,9 +112,10 @@ class PopulateGraph:
 
         self.graph.insert_adjacency(21, 24)
 
+        self.graph.insert_adjacency(22, 1)
         self.graph.insert_adjacency(22, 4)
         self.graph.insert_adjacency(22, 11)
-
+        #
         self.graph.insert_adjacency(23, 4)
         self.graph.insert_adjacency(23, 14)
 
@@ -135,3 +137,32 @@ class PopulateGraph:
         self.graph.insert_adjacency(27, 11)
         self.graph.insert_adjacency(27, 14)
 
+
+    def insert_north(self):
+        for i in range(1, 8):
+            self.graph.insert_node(i)
+
+
+        #1: "Acre", 2: "Amapá", 3: "Amazonas", 4: "Pará", 5: "Rondônia", 6: "Roraima", 7: "Tocantins"
+        self.graph.insert_adjacency(1, 3)
+        self.graph.insert_adjacency(1, 5)
+
+        self.graph.insert_adjacency(2, 4)
+
+        self.graph.insert_adjacency(3, 1)
+        self.graph.insert_adjacency(3, 4)
+        self.graph.insert_adjacency(3, 5)
+        self.graph.insert_adjacency(3, 6)
+
+        self.graph.insert_adjacency(4, 2)
+        self.graph.insert_adjacency(4, 3)
+        self.graph.insert_adjacency(4, 6)
+        self.graph.insert_adjacency(4, 7)
+
+        self.graph.insert_adjacency(5, 1)
+        self.graph.insert_adjacency(5, 3)
+
+        self.graph.insert_adjacency(6, 3)
+        self.graph.insert_adjacency(6, 4)
+
+        self.graph.insert_adjacency(7, 4)

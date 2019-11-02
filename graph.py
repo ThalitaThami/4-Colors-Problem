@@ -1,36 +1,19 @@
 # -*- coding: utf-8 -*-
 class Graph:
-    def __init__(self):
+    def __init__(self, region):
         self.nodes = {}
         self.colors = {1, 2, 3, 4}
-        self.names = {}
-        self.names[1] = "Acre"
-        self.names[2] = "Alagoas"
-        self.names[3] = "Amapá"
-        self.names[4] = "Amazonas"
-        self.names[5] = "Bahia"
-        self.names[6] = "Ceará"
-        self.names[7] = "Distrito Federal"
-        self.names[8] = "Espírito Santo"
-        self.names[9] = "Goiás"
-        self.names[10] = "Maranhão"
-        self.names[11] = "Mato Grosso"
-        self.names[12] = "Mato Grosso do Sul"
-        self.names[13] = "Minas Gerais"
-        self.names[14] = "Pará"
-        self.names[15] = "Paraíba"
-        self.names[16] = "Paraná"
-        self.names[17] = "Pernambuco"
-        self.names[18] = "Piauí"
-        self.names[19] = "Rio de Janeiro"
-        self.names[20] = "Rio Grande do Norte"
-        self.names[21] = "Rio Grande do Sul"
-        self.names[22] = "Rondônia"
-        self.names[23] = "Roraima"
-        self.names[24] = "Santa Catarina"
-        self.names[25] = "São Paulo"
-        self.names[26] = "Sergipe"
-        self.names[27] = "Tocantins"
+
+        if region == "all":
+            self.names = {1: "Acre", 2: "Alagoas", 3: "Amapá", 4: "Amazonas", 5: "Bahia", 6: "Ceará", 7: "Distrito Federal",
+                      8: "Espírito Santo", 9: "Goiás", 10: "Maranhão", 11: "Mato Grosso", 12: "Mato Grosso do Sul",
+                      13: "Minas Gerais", 14: "Pará", 15: "Paraíba", 16: "Paraná", 17: "Pernambuco", 18: "Piauí",
+                      19: "Rio de Janeiro", 20: "Rio Grande do Norte", 21: "Rio Grande do Sul", 22: "Rondônia",
+                      23: "Roraima", 24: "Santa Catarina", 25: "São Paulo", 26: "Sergipe", 27: "Tocantins"}
+
+        if region == "north":
+            self.names = {1: "Acre", 2: "Amapá", 3: "Amazonas", 4: "Pará", 5: "Rondônia", 6: "Roraima", 7: "Tocantins"}
+
 
     def get_adjacency(self, node_id):
         return self.nodes[node_id]['adjacency']
@@ -38,8 +21,8 @@ class Graph:
     def insert_node(self, node_id):
         self.nodes[node_id] = {'color': '', 'name': self.names[node_id], 'adjacency': []}
 
-    def insert_adjacency(self, node_id, node_adjacent_id):
-        self.nodes[node_id]['adjacency'].append(node_adjacent_id)
+    def insert_adjacency(self, node_id, adjacent_id):
+        self.nodes[node_id]['adjacency'].append(adjacent_id)
 
     def set_node_color(self, node_id, color):
         self.nodes[node_id]['color'] = color
@@ -49,6 +32,9 @@ class Graph:
 
     def set_node_name(self, node_id, name):
         self.nodes[node_id]['name'] = name
+
+    def get_all_nodes(self):
+        return self.nodes
 
     def print_graph(self):
         for node_id in self.nodes:
