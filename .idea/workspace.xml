@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="adc2fdcc-e6a9-48c5-a875-987f4456b8b5" name="Default Changelist" comment="" />
+    <list default="true" id="adc2fdcc-e6a9-48c5-a875-987f4456b8b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/greedy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +38,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.breadth">
     <configuration name="backtracking" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="trabalho_1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,8 +125,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.breadth" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.backtracking" />
         <item itemvalue="Python.insert" />
       </list>
@@ -144,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572722291994</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="comitando a busca em largura pra nao perder caso eu estrague ela">
+      <created>1572722572741</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572722572741</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

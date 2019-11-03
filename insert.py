@@ -143,7 +143,7 @@ class GraphPopulator:
             self.graph.insert_node(i)
 
 
-        #1: "Acre", 2: "Amapá", 3: "Amazonas", 4: "Pará", 5: "Rondônia", 6: "Roraima", 7: "Tocantins"
+        # 1: "Acre", 2: "Amapá", 3: "Amazonas", 4: "Pará", 5: "Rondônia", 6: "Roraima", 7: "Tocantins"
         self.graph.insert_adjacency(1, 3)
         self.graph.insert_adjacency(1, 5)
 
@@ -166,3 +166,6 @@ class GraphPopulator:
         self.graph.insert_adjacency(6, 4)
 
         self.graph.insert_adjacency(7, 4)
+
+
+        self.graph.set_heuristics_value()

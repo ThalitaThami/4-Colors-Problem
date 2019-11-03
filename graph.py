@@ -15,26 +15,45 @@ class Graph:
             self.names = {1: "Acre", 2: "Amapá", 3: "Amazonas", 4: "Pará", 5: "Rondônia", 6: "Roraima", 7: "Tocantins"}
 
 
+
     def get_adjacency(self, node_id):
         return self.nodes[node_id]['adjacency']
+
 
     def insert_node(self, node_id):
         self.nodes[node_id] = {'color': '', 'name': self.names[node_id], 'adjacency': []}
 
+
     def insert_adjacency(self, node_id, adjacent_id):
         self.nodes[node_id]['adjacency'].append(adjacent_id)
+
 
     def set_node_color(self, node_id, color):
         self.nodes[node_id]['color'] = color
 
+
     def get_node_color(self, node_id):
         return self.nodes[node_id]['color']
+
 
     def set_node_name(self, node_id, name):
         self.nodes[node_id]['name'] = name
 
+
     def get_all_nodes(self):
         return self.nodes
+
+
+    def set_heuristics_value(self):
+        nodes = self.get_all_nodes()
+
+        for node_id in nodes:
+            nodes[node_id]['heuristics'] = len(nodes[node_id]['adjacency'])
+
+
+    def get_node_heuristics(self, node_id):
+        return self.nodes[node_id]['heuristics']
+
 
     def print_graph(self):
         for node_id in self.nodes:
